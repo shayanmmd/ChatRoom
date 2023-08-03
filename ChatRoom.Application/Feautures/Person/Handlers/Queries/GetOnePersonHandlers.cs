@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 using ChatRoom.Application.DTOs;
-using ChatRoom.Application.Feautures.Person.Requests;
+using ChatRoom.Application.Feautures.Person.Requests.Queries;
 using ChatRoom.Application.Persistence.Contracts;
 using MediatR;
-using AutoMapper;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ChatRoom.Application.Feautures.Person.Handlers.Queries
 {

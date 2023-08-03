@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ChatRoom.Application.DTOs;
 using ChatRoom.Application.Feautures.Person.Requests;
+using ChatRoom.Application.Feautures.Person.Requests.Queries;
 using ChatRoom.Application.Persistence.Contracts;
 using MediatR;
 using System.Collections.Generic;

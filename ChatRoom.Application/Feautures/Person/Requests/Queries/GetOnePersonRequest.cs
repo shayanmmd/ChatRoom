@@ -7,7 +7,7 @@ using ChatRoom.Application.DTOs;
 using ChatRoom.Domain.Commons;
 using MediatR;
 
-namespace ChatRoom.Application.Feautures.Person.Requests
+namespace ChatRoom.Application.Feautures.Person.Requests.Queries
 {
     public class GetOnePersonRequest : IRequest<PersonDto>, IHasGuid
     {

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Feautures\Person\Handlers\Commands\" />
+    <Folder Include="Feautures\Person\Requests\Commands\" />
   </ItemGroup>
 
   <ItemGroup>
