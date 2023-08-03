@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using ChatRoom.Application.Contracts;
 using ChatRoom.Application.DTOs;
 using ChatRoom.Application.Persistence.Contracts;
+using ChatRoom.Domain;
 
 namespace ChatRoom.Application.Persistence.Contracts
 {
-    public interface IPersonDto : IGenericRepository<PersonDto>
+    public interface IPersonRepository : IGenericRepository<Person>
     {
     }
 }

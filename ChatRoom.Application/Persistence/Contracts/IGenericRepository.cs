@@ -8,8 +8,9 @@ namespace ChatRoom.Application.Contracts
 {
     public interface IGenericRepository<T> where T : class
     {
-        Task<T> GetAsync(int id);
+        Task<T> GetAsync(Guid guid);
         Task<IEnumerable<T>> GetAllAsync();
         Task SaveAsync(T item);
+        Task DeleteAsync(Guid guid);
     }
 }
