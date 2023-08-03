@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33920.266
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom", "ChatRoom\ChatRoom.csproj", "{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom", "ChatRoom\ChatRoom.csproj", "{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F442AEE8-BA7F-47D3-9DA7-018BFFB6218B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{930FF70D-D41A-4AC9-B917-8F78FE74EF57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B6883195-8C54-4242-9C49-40CB15447024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructures", "Infrastructures", "{EB5923E9-3DF7-4E15-8C85-914FF656892E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{397B856A-B6BD-465C-A577-4F3D3C7B3CD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Domain", "ChatRoom.Domain\ChatRoom.Domain.csproj", "{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Application", "ChatRoom.Application\ChatRoom.Application.csproj", "{08C99E3D-AEF4-470C-B450-DC75E16D9348}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +29,24 @@ Global
 		{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C99E3D-AEF4-470C-B450-DC75E16D9348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C99E3D-AEF4-470C-B450-DC75E16D9348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C99E3D-AEF4-470C-B450-DC75E16D9348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C99E3D-AEF4-470C-B450-DC75E16D9348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B6883195-8C54-4242-9C49-40CB15447024} = {F442AEE8-BA7F-47D3-9DA7-018BFFB6218B}
+		{EB5923E9-3DF7-4E15-8C85-914FF656892E} = {F442AEE8-BA7F-47D3-9DA7-018BFFB6218B}
+		{397B856A-B6BD-465C-A577-4F3D3C7B3CD0} = {F442AEE8-BA7F-47D3-9DA7-018BFFB6218B}
+		{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F} = {397B856A-B6BD-465C-A577-4F3D3C7B3CD0}
+		{08C99E3D-AEF4-470C-B450-DC75E16D9348} = {397B856A-B6BD-465C-A577-4F3D3C7B3CD0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D8777D4-7DE8-4645-9B08-ED82ACCE3D16}

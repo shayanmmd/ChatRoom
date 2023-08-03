@@ -13,7 +13,7 @@ namespace ChatRoom.Hubs
         {
             try
             {
-                await Clients.All.SendAsync("SendMessage");
+                await Clients.All.SendAsync("RecieveMessage");
             }
             catch (Exception ex) { Log.Error(ex, ""); }
         }
