@@ -11,21 +11,21 @@ using System;
 
 namespace ChatRoom.Application.Feautures.Person.Handlers.Commands
 {
-    public class CreatePersonHandlersCommands : IRequestHandler<CreatePersonRequestCommands, Guid>
+    public class SavePersonHandlersCommands : IRequestHandler<SavePersonRequestCommands, Guid>
     {
         private IPersonRepository _personRepository;
         private IMapper _mapper;
 
-        public CreatePersonHandlersCommands(IPersonRepository personRepository, IMapper mapper)
+        public SavePersonHandlersCommands(IPersonRepository personRepository, IMapper mapper)
         {
             _personRepository = personRepository;
             _mapper = mapper;
         }
 
-        public async Task<Guid> Handle(CreatePersonRequestCommands request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(SavePersonRequestCommands request, CancellationToken cancellationToken)
         {
             #region Validation
-            var validation = new PersonDtoValidator();
+            var validation = new SavePersonDtoValidator();
             var validationResult = await validation.ValidateAsync(request.newPerson);
             if (!validationResult.IsValid)
                 throw new System.Exception();

@@ -9,7 +9,7 @@ using MediatR;
 
 namespace ChatRoom.Application.Feautures.Person.Requests.Commands
 {
-    public class CreatePersonRequestCommands : IRequest<Guid>
+    public class SavePersonRequestCommands : IRequest<Guid>
     {
         public PersonDto newPerson { get; set; }
     }
