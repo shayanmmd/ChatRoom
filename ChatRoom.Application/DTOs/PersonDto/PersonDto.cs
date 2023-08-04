@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatRoom.Application.DTOs
+namespace ChatRoom.Application.DTOs.PersonDto
 {
     public class PersonDto : IHasBase
     {

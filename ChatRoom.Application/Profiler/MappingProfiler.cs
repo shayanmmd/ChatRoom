@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using ChatRoom.Application.DTOs;
+using ChatRoom.Application.DTOs.PersonDto;
 using ChatRoom.Domain;
 
 namespace ChatRoom.Application.Profiler

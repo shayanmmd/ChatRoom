@@ -1,4 +1,5 @@
 ﻿using ChatRoom.Application.DTOs;
+using ChatRoom.Application.DTOs.PersonDto;
 using MediatR;
 using System.Collections.Generic;
 
