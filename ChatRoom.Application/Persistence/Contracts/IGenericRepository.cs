@@ -10,7 +10,7 @@ namespace ChatRoom.Application.Contracts
     {
         Task<T> GetAsync(Guid guid);
         Task<IEnumerable<T>> GetAllAsync();
-        Task<int> SaveAsync(T item);
-        Task DeleteAsync(Guid guid);
+        Task<Guid> SaveAsync(T item);
+        Task<Guid> DeleteAsync(Guid guid);
     }
 }
