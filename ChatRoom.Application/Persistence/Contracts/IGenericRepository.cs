@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatRoom.Application.Responses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace ChatRoom.Application.Contracts
     {
         Task<T> GetAsync(Guid guid);
         Task<IEnumerable<T>> GetAllAsync();
-        Task<Guid> SaveAsync(T item);
-        Task<Guid> DeleteAsync(Guid guid);
+        Task<BaseResponse> SaveAsync(T item);
+        Task<BaseResponse> DeleteAsync(Guid guid);
     }
 }

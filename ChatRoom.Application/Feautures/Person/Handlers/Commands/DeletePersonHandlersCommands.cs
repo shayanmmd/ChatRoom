@@ -8,11 +8,12 @@ using AutoMapper;
 using ChatRoom.Application.DTOs.PersonDto.Validators;
 using ChatRoom.Application.Feautures.Person.Requests.Commands;
 using ChatRoom.Application.Persistence.Contracts;
+using ChatRoom.Application.Responses;
 using MediatR;
 
 namespace ChatRoom.Application.Feautures.Person.Handlers.Commands
 {
-    public class DeletePersonHandlersCommands : IRequestHandler<DeletePersonRequestCommands, Guid>
+    public class DeletePersonHandlersCommands : IRequestHandler<DeletePersonRequestCommands, BaseResponse>
     {
         private IPersonRepository _personRepository;
 
@@ -21,7 +22,7 @@ namespace ChatRoom.Application.Feautures.Person.Handlers.Commands
             _personRepository = personRepository;
         }
 
-        public async Task<Guid> Handle(DeletePersonRequestCommands request, CancellationToken cancellationToken)
+        public async Task<BaseResponse> Handle(DeletePersonRequestCommands request, CancellationToken cancellationToken)
         {
             var validation = new DeletePersonDtoValidator();
             var validationresult = await validation.ValidateAsync(request.oldPerson);

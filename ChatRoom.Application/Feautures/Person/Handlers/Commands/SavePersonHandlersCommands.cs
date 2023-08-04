@@ -8,10 +8,11 @@ using ChatRoom.Domain.Commons;
 using ChatRoom.Domain;
 using ChatRoom.Application.DTOs.PersonDto.Validators;
 using System;
+using ChatRoom.Application.Responses;
 
 namespace ChatRoom.Application.Feautures.Person.Handlers.Commands
 {
-    public class SavePersonHandlersCommands : IRequestHandler<SavePersonRequestCommands, Guid>
+    public class SavePersonHandlersCommands : IRequestHandler<SavePersonRequestCommands, BaseResponse>
     {
         private IPersonRepository _personRepository;
         private IMapper _mapper;
@@ -22,7 +23,7 @@ namespace ChatRoom.Application.Feautures.Person.Handlers.Commands
             _mapper = mapper;
         }
 
-        public async Task<Guid> Handle(SavePersonRequestCommands request, CancellationToken cancellationToken)
+        public async Task<BaseResponse> Handle(SavePersonRequestCommands request, CancellationToken cancellationToken)
         {
             #region Validation
             var validation = new SavePersonDtoValidator();
