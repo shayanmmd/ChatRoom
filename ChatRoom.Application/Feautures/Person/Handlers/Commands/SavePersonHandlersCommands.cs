@@ -25,14 +25,24 @@ namespace ChatRoom.Application.Feautures.Person.Handlers.Commands
 
         public async Task<BaseResponse> Handle(SavePersonRequestCommands request, CancellationToken cancellationToken)
         {
-            #region Validation
-            var validation = new SavePersonDtoValidator();
-            var validationResult = await validation.ValidateAsync(request.newPerson);
-            if (!validationResult.IsValid)
-                throw new System.Exception();
-            #endregion
-            var person = _mapper.Map<Domain.Person>(request.newPerson);
-            return await _personRepository.SaveAsync(person);
+            var res = new BaseResponse();
+            try
+            {
+                #region Validation
+                var validation = new SavePersonDtoValidator();
+                var validationResult = await validation.ValidateAsync(request.newPerson);
+                if (!validationResult.IsValid)
+                {
+                    foreach (var item in validationResult.Errors)
+                        res.AddError(item.ErrorMessage);
+                    return res;
+                }
+                #endregion
+                var person = _mapper.Map<Domain.Person>(request.newPerson);
+                res = await _personRepository.SaveAsync(person);
+            }
+            catch (Exception ex) { res.AddException(ex); }
+            return res;
         }
     }
 }

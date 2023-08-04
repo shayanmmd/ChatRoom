@@ -17,16 +17,32 @@ namespace ChatRoom.Application.Feautures.Person.Handlers.Commands
     {
         private IPersonRepository _personRepository;
 
-        public DeletePersonHandlersCommands(IPersonRepository personRepository,IMapper mapper)
+        public DeletePersonHandlersCommands(IPersonRepository personRepository, IMapper mapper)
         {
             _personRepository = personRepository;
         }
 
         public async Task<BaseResponse> Handle(DeletePersonRequestCommands request, CancellationToken cancellationToken)
         {
-            var validation = new DeletePersonDtoValidator();
-            var validationresult = await validation.ValidateAsync(request.oldPerson);
-            return await _personRepository.DeleteAsync(request.oldPerson.Guid);
+            var res = new BaseResponse();
+            try
+            {
+                #region Validation
+                var validation = new DeletePersonDtoValidator();
+                var validationresult = await validation.ValidateAsync(request.oldPerson);
+                if (!validationresult.IsValid)
+                {
+                    foreach (var item in validationresult.Errors)
+                    {
+                        res.AddError(item.ErrorMessage);
+                        return res;
+                    }
+                }
+                #endregion
+                res = await _personRepository.DeleteAsync(request.oldPerson.Guid);
+            }
+            catch (Exception ex) { res.AddException(ex); }
+            return res;
         }
     }
 }
