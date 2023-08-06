@@ -21,9 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Application", "Cha
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{0BF35B2C-C17D-4AFF-B9D4-03A853A3456C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Infrastructure", "ChatRoom.Infrastructure\ChatRoom.Infrastructure.csproj", "{4E34BA44-E064-49BA-A4BE-AF21D117C1F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Infrastructure", "ChatRoom.Infrastructure\ChatRoom.Infrastructure.csproj", "{4E34BA44-E064-49BA-A4BE-AF21D117C1F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Persistence", "ChatRoom.Persistence\ChatRoom.Persistence.csproj", "{47F45138-381E-406A-B6AB-BA8A6E04BCF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Persistence", "ChatRoom.Persistence\ChatRoom.Persistence.csproj", "{47F45138-381E-406A-B6AB-BA8A6E04BCF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Api", "ChatRoom.Api\ChatRoom.Api.csproj", "{EB938944-3861-4425-92D1-497733F3DFC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{47F45138-381E-406A-B6AB-BA8A6E04BCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47F45138-381E-406A-B6AB-BA8A6E04BCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47F45138-381E-406A-B6AB-BA8A6E04BCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB938944-3861-4425-92D1-497733F3DFC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB938944-3861-4425-92D1-497733F3DFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB938944-3861-4425-92D1-497733F3DFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB938944-3861-4425-92D1-497733F3DFC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{0BF35B2C-C17D-4AFF-B9D4-03A853A3456C} = {F442AEE8-BA7F-47D3-9DA7-018BFFB6218B}
 		{4E34BA44-E064-49BA-A4BE-AF21D117C1F3} = {EB5923E9-3DF7-4E15-8C85-914FF656892E}
 		{47F45138-381E-406A-B6AB-BA8A6E04BCF7} = {EB5923E9-3DF7-4E15-8C85-914FF656892E}
+		{EB938944-3861-4425-92D1-497733F3DFC5} = {0BF35B2C-C17D-4AFF-B9D4-03A853A3456C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D8777D4-7DE8-4645-9B08-ED82ACCE3D16}
