@@ -2,9 +2,9 @@
 
 namespace ChatRoom.Application.DTOs.PersonDto.Validators
 {
-    public class SavePersonDtoValidator : AbstractValidator<PersonDto>
+    public class AddPersonDtoValidator : AbstractValidator<PersonDto>
     {
-        public SavePersonDtoValidator()
+        public AddPersonDtoValidator()
         {
             RuleFor(p => p.Modified)
                 .NotNull().WithMessage("تاریخ اخرین بروزرسانی نمیتواند خالی باشد")

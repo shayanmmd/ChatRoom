@@ -11,7 +11,8 @@ namespace ChatRoom.Application.Contracts
     {
         Task<T> GetAsync(Guid guid);
         Task<IEnumerable<T>> GetAllAsync();
-        Task<BaseResponse> SaveAsync(T item);
+        Task<BaseResponse> AddAsync(T item);
+        Task<BaseResponse> UpdateAsync(T item);
         Task<BaseResponse> DeleteAsync(Guid guid);
     }
 }
