@@ -1,4 +1,5 @@
 ﻿using ChatRoom.Application.Contracts;
+using ChatRoom.Application.Contracts.Persistence;
 using ChatRoom.Application.Persistence.Contracts;
 using ChatRoom.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,8 @@ namespace ChatRoom.Persistence
             });
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<IGroupNameRepository, GroupNameRepository>();
+
             return services;
         }
     }
