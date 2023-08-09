@@ -3,13 +3,14 @@ using ChatRoom.Application.DTOs;
 using ChatRoom.Application.DTOs.PersonDto;
 using ChatRoom.Application.Feautures.Person.Requests.Queries;
 using ChatRoom.Application.Persistence.Contracts;
+using ChatRoom.Application.Responses;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace ChatRoom.Application.Feautures.Person.Handlers.Queries
 {
-    public class GetOnePersonHandlers : IRequestHandler<GetOnePersonRequest, PersonDto>
+    public class GetOnePersonHandlers : IRequestHandler<GetOnePersonRequest,PersonDto>
     {
         private IPersonRepository _personRepository;
         private IMapper _mapper;

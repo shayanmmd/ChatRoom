@@ -14,4 +14,10 @@
     <ProjectReference Include="..\ChatRoom.Domain\ChatRoom.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\GroupNameDto\Validators\" />
+    <Folder Include="Feautures\GroupName\Handlers\Commands\" />
+    <Folder Include="Feautures\GroupName\Requests\Commands\" />
+  </ItemGroup>
+
 </Project>
