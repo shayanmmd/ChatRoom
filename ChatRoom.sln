@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33920.266
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom", "ChatRoom\ChatRoom.csproj", "{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F442AEE8-BA7F-47D3-9DA7-018BFFB6218B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{930FF70D-D41A-4AC9-B917-8F78FE74EF57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B6883195-8C54-4242-9C49-40CB15447024}"
 EndProject
@@ -33,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73E58982-FB4F-4A51-9EBE-0F4E7A6FB3C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D737E3B-A46C-4333-B30C-FA6AEBEF4E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
