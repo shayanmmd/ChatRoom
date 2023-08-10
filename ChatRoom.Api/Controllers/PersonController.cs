@@ -1,13 +1,12 @@
 ﻿using ChatRoom.Application.DTOs.PersonDto;
+using ChatRoom.Application.Feautures.Person.Requests.Commands;
+using ChatRoom.Application.Feautures.Person.Requests.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using MediatR;
-using ChatRoom.Application.Feautures.Person.Requests.Queries;
-using ChatRoom.Application.Feautures.Person.Requests.Commands;
 
 namespace ChatRoom.Api.Controllers
 {
