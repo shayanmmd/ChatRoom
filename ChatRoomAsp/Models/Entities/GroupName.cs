@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatRoom.Application.DTOs.GroupNameDto
+namespace ChatRoomAsp.Models.Entities
 {
     public class GroupName : IHasBase
     {
