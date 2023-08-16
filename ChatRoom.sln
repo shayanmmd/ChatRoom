@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Persistence", "Cha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Api", "ChatRoom.Api\ChatRoom.Api.csproj", "{EB938944-3861-4425-92D1-497733F3DFC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoomAsp", "ChatRoomAsp\ChatRoomAsp.csproj", "{AB49F182-6FAE-4D23-9DD8-30676C85BF84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoomAsp", "ChatRoomAsp\ChatRoomAsp.csproj", "{AB49F182-6FAE-4D23-9DD8-30676C85BF84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

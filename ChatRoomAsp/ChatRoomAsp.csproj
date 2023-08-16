@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="MiddleWares\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
