@@ -18,13 +18,14 @@ namespace ChatRoom.Persistence
         public static IServiceCollection ConfigurePersistenceServices(this IServiceCollection services
             , IConfiguration configuration)
         {
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<IGroupNameRepository, GroupNameRepository>();
             services.AddDbContext<ChatRoomDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("ChatRoomConnectionString"));                
             });
-            services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
-            services.AddScoped<IPersonRepository, PersonRepository>();
-            services.AddScoped<IGroupNameRepository, GroupNameRepository>();
+    
 
             return services;
         }

@@ -1,10 +1,13 @@
-﻿using ChatRoomAsp.Models;
+﻿using ChatRoom.Application.DTOs.GroupNameDto;
+using ChatRoomAsp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ChatRoomAsp.Controllers
@@ -22,11 +25,15 @@ namespace ChatRoomAsp.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult ShowListGroups()
         {
-            return View();
+            var httpClient = new HttpClient();
+            var res = httpClient.GetAsync("https://localhost:44305/GroupName/GetAll").Result;
+            var body = res.Content.ReadAsStringAsync().Result;
+            var output = JsonConvert.DeserializeObject<GroupName>(body);
+            return View(output);
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

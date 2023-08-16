@@ -24,15 +24,16 @@ namespace ChatRoom.Api
         public void ConfigureServices(IServiceCollection services)
         {
             
-            services.AddControllers();
+            services.AddControllers();               
+            services.ConfigureApplicationServices();
+            services.ConfigureInfrastructureServices(Configuration);
+            services.ConfigurePersistenceServices(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChatRoom.Api", Version = "v1" });
             });
             
-            services.ConfigureApplicationServices();
-            services.ConfigureInfrastructureServices(Configuration);
-            services.ConfigurePersistenceServices(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

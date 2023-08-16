@@ -16,10 +16,10 @@ namespace ChatRoom.Persistence
         DbSet<Person> Person { get; set; }
         DbSet<GroupName> GroupName { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ChatRoomDbContext).Assembly);
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.ApplyConfigurationsFromAssembly(typeof(ChatRoomDbContext).Assembly);
+        //}
 
 
 

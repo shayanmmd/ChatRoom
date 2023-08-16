@@ -1,3 +1,4 @@
+using ChatRoomAsp.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +24,7 @@ namespace ChatRoomAsp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();
             services.AddControllersWithViews();
         }
 
@@ -48,10 +50,13 @@ namespace ChatRoomAsp
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<StudentsHub>("/group/students");
             });
+
         }
     }
 }
