@@ -22,7 +22,7 @@ namespace ChatRoom.Api.Controllers
         }
 
         [HttpGet]
-        [Route("/GroupName/Get")]
+        [Route("/GroupName/GetGroupName")]
         public async Task<ActionResult<GroupNameDto>> GetGroupNameAsync([FromHeader] Guid guid)
         {
             try
@@ -37,7 +37,7 @@ namespace ChatRoom.Api.Controllers
         }
 
         [HttpGet]
-        [Route("/GroupName/GetAll")]
+        [Route("/GroupName/GetAllGroupName")]
         public async Task<ActionResult<List<GroupNameDto>>> GetAllGroupNameAsync()
         {
             try
@@ -51,7 +51,7 @@ namespace ChatRoom.Api.Controllers
             }
         }
         [HttpPost]
-        [Route("/GroupName/Add")]
+        [Route("/GroupName/AddGroupName")]
         public async Task<ActionResult<BaseResponse>> AddGroupNameAsync([FromBody] GroupNameDto groupNameDto)
         {
             try
@@ -65,7 +65,7 @@ namespace ChatRoom.Api.Controllers
             }
         }
         [HttpPut]
-        [Route("/GroupName/Update")]
+        [Route("/GroupName/UpdateGroupName")]
         public async Task<ActionResult<BaseResponse>> UpdateGroupNameAsync([FromBody] GroupNameDto groupNameDto)
         {
             try
@@ -79,7 +79,7 @@ namespace ChatRoom.Api.Controllers
             }
         }
         [HttpDelete]
-        [Route("/GroupName/Update")]
+        [Route("/GroupName/DeleteGroupName")]
         public async Task<ActionResult<BaseResponse>> DeleteGroupNameAsync([FromBody] GroupNameDto groupNameDto)
         {
             try

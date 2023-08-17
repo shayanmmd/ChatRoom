@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ChatRoomAsp.Contracts
 {
-    public interface IGroupName
+    public interface IGroupNameService
     {
         Task<List<GroupNameVM>> GetAllAsync();
-        Task<GroupNameVM> GetAsync();
+        Task<GroupNameVM> GetAsync(Guid guid);
         Task<BaseResponse> AddAsync(GroupNameVM item);
         Task<BaseResponse> UpdateAsync(GroupNameVM item);
         Task<BaseResponse> DeleteAsync(GroupNameVM item);

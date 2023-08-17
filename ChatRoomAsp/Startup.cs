@@ -30,6 +30,7 @@ namespace ChatRoomAsp
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddHttpClient<IClient,Client>(Configuration.GetSection("ApiAddress").Value);
+            services.AddScoped<IGroupNameService, GroupNameService>();
             services.AddSingleton<ILocalStorage, LocalStorageService>();
             services.AddSignalR();
             services.AddControllersWithViews();
