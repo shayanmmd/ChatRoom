@@ -1,4 +1,7 @@
+using ChatRoomAsp.Contracts;
 using ChatRoomAsp.Hubs;
+using ChatRoomAsp.Services;
+using ChatRoomAsp.Services.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +29,8 @@ namespace ChatRoomAsp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddHttpClient<IClient,Client>(Configuration.GetSection("ApiAddress").Value);
+            services.AddSingleton<ILocalStorage, LocalStorageService>();
             services.AddSignalR();
             services.AddControllersWithViews();
         }

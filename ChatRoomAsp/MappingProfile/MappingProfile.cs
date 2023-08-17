@@ -12,7 +12,7 @@ namespace ChatRoomAsp.MappingProfile
     {
         public MappingProfile()
         {
-            CreateMap<GroupName,GroupNameDto>().ReverseMap();
+            CreateMap<GroupNameVM,GroupNameDto>().ReverseMap();
         }
     }
 }

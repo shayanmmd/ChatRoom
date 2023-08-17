@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChatRoomAsp.Models.Entities
 {
-    public class GroupName : IHasBase
+    public class GroupNameVM : IHasBase
     {
         public Guid Guid { get; set; }
         public string Name { get; set; }

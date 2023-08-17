@@ -21,7 +21,7 @@ namespace ChatRoom.Api.Controllers
 
         [HttpGet]
         [Route("/Person/GetAll")]
-        public async Task<ActionResult<List<PersonDto>>> GetAllAsync()
+        public async Task<ActionResult<List<PersonDto>>> GetAllPersonAsync()
         {
 
             try
@@ -37,7 +37,7 @@ namespace ChatRoom.Api.Controllers
 
         [HttpGet]
         [Route("/Person/Get")]
-        public async Task<ActionResult<PersonDto>> GetAsync([FromHeader] Guid guid)
+        public async Task<ActionResult<PersonDto>> GetPersonAsync([FromHeader] Guid guid)
         {
 
             try
@@ -53,7 +53,7 @@ namespace ChatRoom.Api.Controllers
 
         [HttpPost]
         [Route("/Person/Add")]
-        public async Task<ActionResult<PersonDto>> AddAsync([FromBody] PersonDto personDto)
+        public async Task<ActionResult<PersonDto>> AddPersonAsync([FromBody] PersonDto personDto)
         {
 
             try
@@ -68,7 +68,7 @@ namespace ChatRoom.Api.Controllers
         }
         [HttpPut]
         [Route("/Person/Update")]
-        public async Task<ActionResult<PersonDto>> UpdateAsync([FromBody] PersonDto personDto)
+        public async Task<ActionResult<PersonDto>> UpdatePersonAsync([FromBody] PersonDto personDto)
         {
 
             try
@@ -83,7 +83,7 @@ namespace ChatRoom.Api.Controllers
         }
         [HttpDelete]
         [Route("/Person/Delete")]
-        public async Task<ActionResult<PersonDto>> DeleteAsync([FromBody] PersonDto personDto)
+        public async Task<ActionResult<PersonDto>> DeletePersonAsync([FromBody] PersonDto personDto)
         {
 
             try

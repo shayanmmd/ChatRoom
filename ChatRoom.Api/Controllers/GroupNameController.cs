@@ -23,7 +23,7 @@ namespace ChatRoom.Api.Controllers
 
         [HttpGet]
         [Route("/GroupName/Get")]
-        public async Task<ActionResult<GroupNameDto>> GetAsync([FromHeader] Guid guid)
+        public async Task<ActionResult<GroupNameDto>> GetGroupNameAsync([FromHeader] Guid guid)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace ChatRoom.Api.Controllers
 
         [HttpGet]
         [Route("/GroupName/GetAll")]
-        public async Task<ActionResult<List<GroupNameDto>>> GetAllAsync()
+        public async Task<ActionResult<List<GroupNameDto>>> GetAllGroupNameAsync()
         {
             try
             {
@@ -52,7 +52,7 @@ namespace ChatRoom.Api.Controllers
         }
         [HttpPost]
         [Route("/GroupName/Add")]
-        public async Task<ActionResult<BaseResponse>> AddAsync([FromBody] GroupNameDto groupNameDto)
+        public async Task<ActionResult<BaseResponse>> AddGroupNameAsync([FromBody] GroupNameDto groupNameDto)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace ChatRoom.Api.Controllers
         }
         [HttpPut]
         [Route("/GroupName/Update")]
-        public async Task<ActionResult<BaseResponse>> UpdateAsync([FromBody] GroupNameDto groupNameDto)
+        public async Task<ActionResult<BaseResponse>> UpdateGroupNameAsync([FromBody] GroupNameDto groupNameDto)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace ChatRoom.Api.Controllers
         }
         [HttpDelete]
         [Route("/GroupName/Update")]
-        public async Task<ActionResult<BaseResponse>> DeleteAsync([FromBody] GroupNameDto groupNameDto)
+        public async Task<ActionResult<BaseResponse>> DeleteGroupNameAsync([FromBody] GroupNameDto groupNameDto)
         {
             try
             {

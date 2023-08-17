@@ -27,11 +27,8 @@ namespace ChatRoomAsp.Controllers
         }
         public IActionResult ShowListGroups()
         {
-            var httpClient = new HttpClient();
-            var res = httpClient.GetAsync("https://localhost:44305/GroupName/GetAll").Result;
-            var body = res.Content.ReadAsStringAsync().Result;
-            var output = JsonConvert.DeserializeObject<GroupName>(body);
-            return View(output);
+          
+            return View();
         }
 
 
