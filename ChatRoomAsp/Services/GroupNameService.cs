@@ -52,8 +52,11 @@ namespace ChatRoomAsp.Services
 
         public async Task<List<GroupNameVM>> GetAllAsync()
         {
-            var res = await _client.GetAllGroupNameAsync();
-            return _mapper.Map<List<GroupNameVM>>(res);
+            var ret = new List<GroupNameVM>();
+            var res = (await _client.GetAllGroupNameAsync()).ToList();
+            foreach (var item in res)
+                ret.Add(_mapper.Map<GroupNameVM>(item));
+            return ret;
         }
 
         public async Task<GroupNameVM> GetAsync(Guid guid)

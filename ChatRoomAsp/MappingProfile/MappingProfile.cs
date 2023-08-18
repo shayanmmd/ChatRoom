@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using ChatRoom.Application.DTOs.GroupNameDto;
 using ChatRoomAsp.Models.Entities;
+using ChatRoomAsp.Services.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;

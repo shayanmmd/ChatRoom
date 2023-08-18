@@ -28,11 +28,13 @@ namespace ChatRoomAsp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();            
+            services.AddHttpClient<IClient, Client>(c => c.BaseAddress = new Uri(Configuration.GetSection("ApiAddress").Value));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddHttpClient<IClient,Client>(Configuration.GetSection("ApiAddress").Value);
-            services.AddScoped<IGroupNameService, GroupNameService>();
+            //services.AddAutoMapper(c => c.CreateMap<GroupNameDto, GroupNameService>().ReverseMap());
             services.AddSingleton<ILocalStorage, LocalStorageService>();
-            services.AddSignalR();
+            services.AddTransient<IGroupNameService, GroupNameService>();
+            
             services.AddControllersWithViews();
         }
 
