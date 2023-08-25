@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace ChatRoomAsp.Models.Entities
 {
-    public class GroupNameVM : IHasBase
+    public class GroupNameVM
     {
         public Guid Guid { get; set; }
+
         public string Name { get; set; }
-        public DateTime Modified { get; set; }
+
+        public DateTimeOffset Modified { get; set; }
+
         public bool Status { get; set; }
     }
 }
