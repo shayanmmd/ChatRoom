@@ -18,7 +18,7 @@ namespace ChatRoom.Identity.Configurations
                 {
                     Id = "51122807-3264-4fe1-9de0-3ffe94e19a1c",
                     Name = "User",
-                    NormalizedName = "USERS"
+                    NormalizedName = "USER"
                 },
                 new IdentityRole
                 {
