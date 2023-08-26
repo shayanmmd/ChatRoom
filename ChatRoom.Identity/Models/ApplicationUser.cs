@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChatRoom.Identity.Models
 {
-    class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         public string Name { get; set; }
     }
