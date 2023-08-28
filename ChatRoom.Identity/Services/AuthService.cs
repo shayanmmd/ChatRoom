@@ -26,7 +26,7 @@ namespace ChatRoom.Identity.Services
 
         public Task<AuthResponse> LoginAsync(AuthRequest request)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); 
         }
 
         public async Task<RegisterationResponse> RegisterAsync(RegisterationRequest request)
@@ -38,6 +38,7 @@ namespace ChatRoom.Identity.Services
             {
                 Name = request.Name,
                 PhoneNumber = request.PhoneNumber,
+                PhoneNumberConfirmed = true
             };
             var resutlt = await _userManager.CreateAsync(user, request.PhoneNumber);
             if (!resutlt.Succeeded)

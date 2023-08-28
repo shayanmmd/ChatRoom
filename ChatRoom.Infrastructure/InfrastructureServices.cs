@@ -9,8 +9,7 @@ namespace ChatRoom.Infrastructure
     {
         public static IServiceCollection ConfigureInfrastructureServices(this IServiceCollection services
              , IConfiguration configuration)
-        {
-            //services.Configure<EmailSetting>("", options => { configuration.GetSection("");});
+        {            
             services.AddTransient<IEmail, EmailSender>();
             return services;
         }
