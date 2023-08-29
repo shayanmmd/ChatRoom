@@ -30,7 +30,7 @@ namespace ChatRoom.Api
             services.ConfigureApplicationServices();
             services.ConfigureInfrastructureServices(Configuration);
             services.ConfigurePersistenceServices(Configuration);
-            services.ConfigureIdentityServices();
+            services.ConfigureIdentityServices(Configuration);
 
             services.AddSwaggerGen(c =>
             {

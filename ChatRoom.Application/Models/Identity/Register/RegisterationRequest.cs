@@ -12,7 +12,7 @@ namespace ChatRoom.Application.Models.Identity.Register
         [Required]
         [MinLength(3)]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public string UserName { get; set; }
         [Required]
         [StringLength(11)]
         public string PhoneNumber { get; set; }
