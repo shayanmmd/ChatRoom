@@ -1,5 +1,6 @@
 ﻿using ChatRoom.Application.Contracts.Identity;
 using ChatRoom.Identity.Services;
+using ChatRoom.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
@@ -17,13 +18,14 @@ namespace ChatRoom.Identity
     {
         public static IServiceCollection ConfigureIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddIdentityCore<IdentityUser>()
-            //    .AddEntityFrameworkStores<ChatRoomIdentityDbContext>()
-            //    .AddDefaultTokenProviders();            
-            services.AddDbContext<ChatRoomIdentityDbContext>(options =>
+            services.AddDbContextPool<ChatRoomIdentityDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("ChatRoomConnectionString"));
             });
+            services.AddIdentity<IdentityUser,IdentityRole>()
+                .AddEntityFrameworkStores<ChatRoomIdentityDbContext>()
+                .AddDefaultTokenProviders();
+        
             services.AddSingleton<IAuthService, AuthService>();
             return services;
         }

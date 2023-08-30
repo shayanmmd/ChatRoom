@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ChatRoom.Identity
 {
-    public class ChatRoomIdentityDbContext : DbContext
+    public class ChatRoomIdentityDbContext : IdentityDbContext
     {
-        public ChatRoomIdentityDbContext(DbContextOptions<ChatRoomIdentityDbContext> options)
+        public ChatRoomIdentityDbContext(DbContextOptions options)
         : base(options) { }
 
         
