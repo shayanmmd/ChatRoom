@@ -18,6 +18,8 @@ namespace ChatRoom.Identity
     {
         public static IServiceCollection ConfigureIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
+
+            services.AddScoped<IAuthService, AuthService>();
             services.AddDbContextPool<ChatRoomIdentityDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("ChatRoomConnectionString"));
@@ -25,8 +27,6 @@ namespace ChatRoom.Identity
             services.AddIdentity<IdentityUser,IdentityRole>()
                 .AddEntityFrameworkStores<ChatRoomIdentityDbContext>()
                 .AddDefaultTokenProviders();
-        
-            services.AddSingleton<IAuthService, AuthService>();
             return services;
         }
     }

@@ -16,5 +16,7 @@ namespace ChatRoom.Application.Models.Identity.Register
         [Required]
         [StringLength(11)]
         public string PhoneNumber { get; set; }
+        [Required]
+        public string PassWord { get; set; }
     }
 }

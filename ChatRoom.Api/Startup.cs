@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using ChatRoom.Application.Contracts.Identity;
+using ChatRoom.Identity.Services;
 
 namespace ChatRoom.Api
 {

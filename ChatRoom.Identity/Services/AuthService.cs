@@ -2,7 +2,7 @@
 using ChatRoom.Application.Models.Identity;
 using ChatRoom.Application.Models.Identity.Login;
 using ChatRoom.Application.Models.Identity.Register;
-
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using System;
@@ -14,13 +14,11 @@ namespace ChatRoom.Identity.Services
     public class AuthService : IAuthService
     {
         private readonly UserManager<IdentityUser> _userManager;
-        //private readonly IOptions<JwtSettings> _options;
         private readonly SignInManager<IdentityUser> _signInManager;
 
         public AuthService(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
-           // _options = options;
             _signInManager = signInManager;
         }
 
@@ -34,7 +32,7 @@ namespace ChatRoom.Identity.Services
                 UserName = request.UserName,
                 PhoneNumber = request.PhoneNumber
             };
-            await _signInManager.SignInAsync(user, false);
+            await _signInManager.SignInAsync(user, false);          
             return new AuthResponse { Guid = Guid.Parse(user.Id), PhoneNumber = request.PhoneNumber, UserName = request.UserName };
         }
 
@@ -49,7 +47,7 @@ namespace ChatRoom.Identity.Services
                 PhoneNumber = request.PhoneNumber,
                 PhoneNumberConfirmed = true
             };
-            var resutlt = await _userManager.CreateAsync(user, request.PhoneNumber);
+            var resutlt = await _userManager.CreateAsync(user, request.PassWord);
             if (!resutlt.Succeeded)
                 throw new Exception("task failed");
             await _userManager.AddToRoleAsync(user, "User");

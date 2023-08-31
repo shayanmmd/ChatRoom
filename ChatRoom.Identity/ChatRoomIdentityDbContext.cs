@@ -1,6 +1,7 @@
 ﻿using ChatRoom.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ChatRoom.Identity
 {
@@ -8,8 +9,6 @@ namespace ChatRoom.Identity
     {
         public ChatRoomIdentityDbContext(DbContextOptions options)
         : base(options) { }
-
-        
 
     }
 }
