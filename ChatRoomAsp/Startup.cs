@@ -2,6 +2,7 @@ using ChatRoomAsp.Contracts;
 using ChatRoomAsp.Hubs;
 using ChatRoomAsp.Models.Entities;
 using ChatRoomAsp.Services;
+using ChatRoomAsp.Services.Auth;
 using ChatRoomAsp.Services.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,10 +33,10 @@ namespace ChatRoomAsp
             services.AddSignalR();            
             services.AddHttpClient<IClient, Client>(c => c.BaseAddress = new Uri(Configuration.GetSection("ApiAddress").Value));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            //services.AddAutoMapper(c => c.CreateMap<GroupNameDto, GroupNameVM>().ReverseMap());
             services.AddSingleton<ILocalStorage, LocalStorageService>();
             services.AddTransient<IGroupNameService, GroupNameService>();
-            
+            services.AddTransient<IAuthService, AuthService>();
+
             services.AddControllersWithViews();
         }
 

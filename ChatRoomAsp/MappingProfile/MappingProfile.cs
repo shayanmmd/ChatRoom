@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ChatRoomAsp.Models.Entities;
+using ChatRoomAsp.Models.Entities.Auth;
 using ChatRoomAsp.Services.Base;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace ChatRoomAsp.MappingProfile
         public MappingProfile()
         {
             CreateMap<GroupNameVM,GroupNameDto>().ReverseMap();
+            CreateMap<LoginVM, AuthRequest>().ReverseMap();
         }
     }
 }
