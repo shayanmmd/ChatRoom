@@ -1,16 +1,6 @@
-﻿using ChatRoom.Application.DTOs.GroupNameDto;
-using ChatRoomAsp.Contracts;
-using ChatRoomAsp.Models;
-using ChatRoomAsp.Services;
-using ChatRoomAsp.Services.Base;
+﻿using ChatRoomAsp.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ChatRoomAsp.Controllers
@@ -30,7 +20,7 @@ namespace ChatRoomAsp.Controllers
             return View();
         }
         public async Task<IActionResult> ShowListGroups()
-         {
+        {
             var res = await _groupNameService.GetAllAsync();
             return View(res);
         }
