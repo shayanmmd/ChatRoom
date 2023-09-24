@@ -11,5 +11,7 @@ namespace ChatRoom.Application.Models.Identity.Login
         public Guid Guid { get; set; }
         public string UserName { get; set; }
         public string PhoneNumber { get; set; }
+        public bool Succussed { get; set; } = true;
+        public string ErrorMessage { get; set; }
     }
 }

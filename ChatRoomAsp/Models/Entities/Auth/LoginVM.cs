@@ -8,11 +8,11 @@ namespace ChatRoomAsp.Models.Entities.Auth
 {
     public class LoginVM
     {
-        [Required]
+        [Required(ErrorMessage ="fuck you")]
         [MinLength(3)]
         [MaxLength(20)]
         public string UserName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "fuck you")]
         [StringLength(11)]
         public string PhoneNumber { get; set; }
     }

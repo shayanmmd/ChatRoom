@@ -25,22 +25,14 @@ namespace ChatRoomAsp.Controllers
             _logger = logger;
             _groupNameService = groupNameService;
         }
-
         public IActionResult Index()
         {
             return View();
         }
         public async Task<IActionResult> ShowListGroups()
-        {
-            var res = await _groupNameService.GetAsync(Guid.Parse("aec6cbb9-34c4-4d3a-a8a2-0f1256a0c297"));
+         {
+            var res = await _groupNameService.GetAllAsync();
             return View(res);
-        }
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

@@ -11,6 +11,9 @@ using Microsoft.OpenApi.Models;
 using System.Reflection;
 using ChatRoom.Application.Contracts.Identity;
 using ChatRoom.Identity.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace ChatRoom.Api
 {
@@ -34,6 +37,28 @@ namespace ChatRoom.Api
             services.ConfigurePersistenceServices(Configuration);
             services.ConfigureIdentityServices(Configuration);
 
+            //JWT
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration.GetSection("ValidServer").Value,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Our Valid Token Will Be Used In This"))
+                    };
+                });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("EnableCors",builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build();
+                });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChatRoom.Api", Version = "v1" });
@@ -54,7 +79,10 @@ namespace ChatRoom.Api
 
             app.UseRouting();
 
+          
             app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseCors("EnableCors");
 
             app.UseEndpoints(endpoints =>
             {

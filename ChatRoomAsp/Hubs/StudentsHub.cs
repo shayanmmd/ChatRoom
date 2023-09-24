@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.SignalR;
 
 namespace ChatRoomAsp.Hubs
 {
-    
+
     public class StudentsHub : Hub
     {
-        public override Task OnConnectedAsync()
-        {
-            return base.OnConnectedAsync();
-        }
 
-        public async Task SendMessageAsync(string name,string textMessage)
+        public async Task SendMessageAsync(string textMessage)
         {
-            await Clients.All.SendAsync("RecieveMessage", name, textMessage);
+            await Clients.All.SendAsync("RecieveMessage", textMessage);
         }
     }
 }

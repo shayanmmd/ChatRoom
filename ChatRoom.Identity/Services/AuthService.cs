@@ -26,13 +26,13 @@ namespace ChatRoom.Identity.Services
         {
             var existingUser = _userManager.Users.SingleOrDefault(x => x.UserName == request.UserName && x.PhoneNumber == request.PhoneNumber);
             if (existingUser == null)
-                throw new Exception("you are not registerd to login");
+                return new AuthResponse { Succussed = false, ErrorMessage = "نام کاربری و یا شماره تلفنی با مشخصات وارد شده یافت نشد" };
             var user = new IdentityUser
             {
                 UserName = request.UserName,
                 PhoneNumber = request.PhoneNumber
             };
-            await _signInManager.SignInAsync(user, false);          
+            await _signInManager.SignInAsync(user, false);
             return new AuthResponse { Guid = Guid.Parse(user.Id), PhoneNumber = request.PhoneNumber, UserName = request.UserName };
         }
 

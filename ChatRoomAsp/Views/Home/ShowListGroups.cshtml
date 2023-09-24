@@ -1,0 +1,16 @@
+﻿@model List<ChatRoomAsp.Models.Entities.GroupNameVM>;
+
+@foreach (var item in Model)
+{
+    <a href="#" onclick="Handler()">@item.Name</a>
+    <br />
+}
+
+<input id="input"/>
+<button value="send" onclick="sendText()">send</button>
+<div id="messageList"></div>
+
+
+
+<script src="~/js/SignalRLib.js"></script>
+<script src="~/js/ClientSignalR.js"></script>

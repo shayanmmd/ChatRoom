@@ -22,9 +22,12 @@ namespace ChatRoomAsp.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<AuthResponse> Login(LoginVM loginVM)
+        public async Task<IActionResult> Login(LoginVM loginVM)
         {
-            return await _authService.LoginAsync(loginVM);
+            var res = await _authService.LoginAsync(loginVM);
+
+            return View("~/Views/Login/Login.cshtml", res.ErrorMessage);
+
         }
 
     }
