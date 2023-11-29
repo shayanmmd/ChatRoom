@@ -1,17 +1,12 @@
 using ChatRoom.Application;
 using ChatRoom.Infrastructure;
 using ChatRoom.Persistence;
-using ChatRoom.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
-using ChatRoom.Application.Contracts.Identity;
-using ChatRoom.Identity.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -35,22 +30,8 @@ namespace ChatRoom.Api
             services.ConfigureApplicationServices();
             services.ConfigureInfrastructureServices(Configuration);
             services.ConfigurePersistenceServices(Configuration);
-            services.ConfigureIdentityServices(Configuration);
 
-            //JWT
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = false,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-                        ValidIssuer = Configuration.GetSection("ValidServer").Value,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Our Valid Token Will Be Used In This"))
-                    };
-                });
+            
             services.AddCors(options =>
             {
                 options.AddPolicy("EnableCors",builder =>

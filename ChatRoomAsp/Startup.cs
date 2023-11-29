@@ -1,20 +1,8 @@
-using ChatRoomAsp.Contracts;
 using ChatRoomAsp.Hubs;
-using ChatRoomAsp.Models.Entities;
-using ChatRoomAsp.Services;
-using ChatRoomAsp.Services.Auth;
-using ChatRoomAsp.Services.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 
 namespace ChatRoomAsp
 {
@@ -31,11 +19,8 @@ namespace ChatRoomAsp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();            
-            services.AddHttpClient<IClient, Client>(c => c.BaseAddress = new Uri(Configuration.GetSection("ApiAddress").Value));
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddSingleton<ILocalStorage, LocalStorageService>();
-            services.AddTransient<IGroupNameService, GroupNameService>();
-            services.AddTransient<IAuthService, AuthService>();
+          
+          
             services.AddControllersWithViews();
         }
 
