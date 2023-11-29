@@ -8,8 +8,8 @@ namespace ChatRoomAsp.Hubs
     {
 
         public async Task SendMessageAsync(string textMessage)
-        {
-            await Clients.All.SendAsync("RecieveMessage", textMessage);
+        {            
+            await Clients.Others.SendAsync("RecieveMessage", textMessage);
         }
     }
 }

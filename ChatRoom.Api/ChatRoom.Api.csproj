@@ -18,7 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ChatRoom.Application\ChatRoom.Application.csproj" />
     <ProjectReference Include="..\ChatRoom.Domain\ChatRoom.Domain.csproj" />
-    <ProjectReference Include="..\ChatRoom.Identity\ChatRoom.Identity.csproj" />
     <ProjectReference Include="..\ChatRoom.Infrastructure\ChatRoom.Infrastructure.csproj" />
     <ProjectReference Include="..\ChatRoom.Persistence\ChatRoom.Persistence.csproj" />
   </ItemGroup>

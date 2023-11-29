@@ -14,12 +14,24 @@ try {
 connection.on("RecieveMessage", renderMessage);
 
 function renderMessage(textMessage) {
-    const li = document.createElement("li");
-    li.textContent = `${textMessage}`;
-    document.getElementById("messageList").appendChild(li);
+
+    var ul = document.getElementById("list_conversation");
+    ul.innerHTML +=
+        "<li class='clearfix odd'>" +
+        "<div class='chat-avatar'>" +
+        "<img src='~/Template/images/avatar-1.jpg' alt='male'>" +
+        "<i>10:00</i>" +
+        "</div>" +
+        "<div class='conversation-text'>" +
+        "<div class='ctext-wrap'>" +
+        "<i>smith</i>" +
+        "<p>" + textMessage + "</p>" +
+        "</div>" +
+        "</div>" +
+        "</li>";
 }
 
 async function sendText() {
-    var elem = document.getElementById('input');
+    var elem = document.getElementById('messageText');
     await connection.invoke("SendMessageAsync", elem.value);
 }

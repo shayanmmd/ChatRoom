@@ -3,7 +3,6 @@ using ChatRoom.Application.Feautures.GroupName.Requests.Commands;
 using ChatRoom.Application.Feautures.GroupName.Requests.Queries;
 using ChatRoom.Application.Responses;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -38,11 +37,11 @@ namespace ChatRoom.Api.Controllers
         }
 
         [HttpGet]
-        [Route("/GroupName/GetAllGroupName")]       
+        [Route("/GroupName/GetAllGroupName")]
         public async Task<ActionResult<List<GroupNameDto>>> GetAllGroupNameAsync()
         {
             try
-            {                
+            {
                 var response = await _mediator.Send(new GetListGroupNameRequest());
                 return Ok(response);
             }
